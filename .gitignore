@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environment
+venv/
+.venv/
+.env/
+
+# Pytest
+.pytest_cache/
+reports/
+htmlcov/
+
+# Playwright
+playwright-report/
+test-results/
+traces/
+videos/
+screenshots/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
