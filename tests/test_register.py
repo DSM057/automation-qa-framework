@@ -1,8 +1,7 @@
-from playwright.sync_api import expect , Page
+from playwright.sync_api import Page
 from pages.home_page import HomePage
 from pages.signin_register_page import SigninRegisterPage
 from pages.register_form_page import RegisterFormPage
-import time
 
 
 

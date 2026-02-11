@@ -1,5 +1,4 @@
-from playwright.sync_api import Page , expect 
-from pages.home_page import HomePage
+from playwright.sync_api import Page 
 from pages.cart_page import CartPage
 
 

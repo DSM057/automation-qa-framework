@@ -1,4 +1,4 @@
-from playwright.sync_api import Page ,expect
+from playwright.sync_api import Page
 from pages.products_page import ProductPage
 from pages.signin_register_page import SigninRegisterPage
 from pages.cart_page import CartPage

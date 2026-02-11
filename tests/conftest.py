@@ -1,5 +1,4 @@
 import pytest
-from playwright.sync_api import Page , expect  
 from pages.home_page import HomePage
 from pages.register_form_page import RegisterFormPage
 from pages.signin_register_page import SigninRegisterPage

@@ -1,4 +1,4 @@
-from playwright.sync_api import Page , expect
+from playwright.sync_api import Page
 from pages.home_page import HomePage
 
 def test_verify_sub(page : Page):

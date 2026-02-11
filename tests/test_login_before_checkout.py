@@ -2,14 +2,12 @@ from playwright.sync_api import Page,expect
 from pages.home_page import HomePage
 from pages.cart_page import CartPage
 from pages.signin_register_page import SigninRegisterPage
-from pages.register_form_page import RegisterFormPage
 from pages.checkout_page import CheckoutPage
 
 def test_registration_with_checkout(page: Page, start_home):
     home = HomePage(page)
     cart = CartPage(page)
     signin = SigninRegisterPage(page)
-    registration_form = RegisterFormPage(page)
     checkout = CheckoutPage(page)
 
     name = "Vladyslav"
