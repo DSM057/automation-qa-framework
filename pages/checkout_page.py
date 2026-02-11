@@ -26,7 +26,7 @@ class CheckoutPage:
 
 
 
-    def expect_address_delivery(self, first_name , last_name , address1 , city , state ,postcode , country , number , address2 = None ):
+    def expect_address_delivery(self, first_name : str , last_name : str , address1 : str , city : str , state : str ,postcode : str , country : str , number : str  , address2 = None ):
         expect(self.first_last_name).to_contain_text(first_name)
         expect(self.first_last_name).to_contain_text(last_name)
         expect(self.address).to_contain_text(address1)
@@ -38,8 +38,8 @@ class CheckoutPage:
         expect(self.number).to_contain_text(number)
 
 
-    def check_review(self , nameprod):
-        review = self.prod_name_review = self.page.get_by_text(nameprod)
+    def check_review(self , nameprod : str):
+        review = self.page.get_by_text(nameprod)
         expect(review).to_be_visible()
 
     def fill_description(self):
@@ -48,7 +48,7 @@ class CheckoutPage:
     def click_place_order(self):
         self.place_order.click()
 
-    def fill_card_info(self, name , card , cvc , month , year):
+    def fill_card_info(self, name : str , card : str , cvc : str , month : str , year : str):
         self.name_on_card.fill(name)
         self.card_num.fill(card)
         self.card_cvc.fill(cvc)

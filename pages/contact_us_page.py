@@ -23,7 +23,7 @@ class ContactUs:
     def check_get_in_touch(self):
         expect(self.get_in_touch).to_be_visible()
 
-    def fill_info(self , name , email , subject) :
+    def fill_info(self , name : str , email : str , subject : str) :
         self.name_textbox.fill(name)
         self.email_textbox.fill(email)
         self.subject_textbox.fill(subject)

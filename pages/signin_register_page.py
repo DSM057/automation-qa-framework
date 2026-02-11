@@ -24,10 +24,10 @@ class SigninRegisterPage:
     def check_new_user_signup_visible(self):
         expect(self.new_user_messange).to_be_visible()
 
-    def fill_name(self , name):
+    def fill_name(self , name : str):
         self.name_input.fill(name)
 
-    def fill_email(self , email):
+    def fill_email(self , email : str):
         self.email_input.fill(email)
 
     def click_signup_button(self):
@@ -36,10 +36,10 @@ class SigninRegisterPage:
     def login_text_check(self):
         expect(self.login_text).to_be_visible()
 
-    def fill_login_email(self,email):
+    def fill_login_email(self,email : str):
         self.email_login.fill(email)
 
-    def fill_login_password(self,password):
+    def fill_login_password(self,password : str):
         self.email_password.fill(password)
 
     def login_button_click(self):

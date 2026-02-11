@@ -29,7 +29,7 @@ class CartPage:
         expect(self.sub_text).to_be_visible()
 
 
-    def fill_email_sub(self,email):
+    def fill_email_sub(self,email : str):
         self.detail_prod = self.page.locator("div.product-information")
         # expect(self.detail_prod).to_be_visible()
         self.email_sub.fill(email)
@@ -49,21 +49,21 @@ class CartPage:
     def click_view_cart(self):
         self.sum_view_cart.click()
 
-    def check_correct_quantity(self , number):
+    def check_correct_quantity(self , number : str):
         self.quant_text = self.page.locator("td.cart_quantity").get_by_role("button")
         expect(self.quant_text).to_have_text(number)
 
-    def check_count_prod(self , count):
+    def check_count_prod(self , count : int):
         self.list_items = self.page.locator('tbody tr[id*="product-"]')
         expect(self.list_items).to_have_count(count)
 
-    def get_item_price(self,number):
+    def get_item_price(self,number : int):
         return self.page.locator('tbody tr[id^="product-"] td.cart_price p').nth(number).inner_text()
 
-    def get_quantity(self , number):
+    def get_quantity(self , number : int):
        return self.page.locator("td.cart_quantity button[class='disabled']").nth(number).inner_text()
     
-    def total_price(self , number):
+    def total_price(self , number : int):
         return self.page.locator('tbody p.cart_total_price').nth(number).inner_text()
     
     def click_to_proceed(self):
@@ -76,7 +76,7 @@ class CartPage:
         expect(self.cart_sum).not_to_be_visible()
 
 
-    def check_prod(self, name):
+    def check_prod(self, name : str):
         search_name = self.page.get_by_text(name) 
         expect(search_name).to_be_visible()
 

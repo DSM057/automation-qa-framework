@@ -33,15 +33,15 @@ class RegisterFormPage:
     def male_or_female(self):
         self.gender_selection.first.click()
 
-    def fill_name(self,name):
+    def fill_name(self,name : str):
         self.name_textbox.click()
         self.name_textbox.fill(name)
     
-    def fill_password(self,password):
+    def fill_password(self,password : str):
         self.password_textbox.click()
         self.password_textbox.fill(password)
 
-    def fill_hb_date(self,day,month,year):
+    def fill_hb_date(self,day : str,month : str,year : str):
         self.day_select.select_option(day)
         self.month_select.select_option(month)
         self.year_select.select_option(year)
@@ -50,24 +50,24 @@ class RegisterFormPage:
         self.news_checkbox.click()
         self.agree_checkbox.click()
 
-    def fill_fullname(self, name , surname):
+    def fill_fullname(self, name : str , surname : str):
         self.first_name.fill(name)
         self.last_name.fill(surname)
 
-    def fill_company(self , company):
+    def fill_company(self , company : str):
         self.company.fill(company)
 
-    def fill_address(self , address1 , address2):
+    def fill_address(self , address1 : str , address2 : str):
         self.address1.fill(address1)
         self.address2.fill(address2)
 
-    def fill_location(self , country , state , city , zipcode):
+    def fill_location(self , country : str , state : str , city : str , zipcode : str):
         self.country_textbox.select_option(country)
         self.state_textbox.fill(state)
         self.city_textbox.fill(city)
         self.zipcode_textbox.fill(zipcode)
         
-    def fill_number(self,number):
+    def fill_number(self,number : str):
         self.number_textbox.fill(number)
 
     def create_account_click(self):

@@ -47,7 +47,7 @@ class HomePage:
     def go_to_signup_login(self):
         self.signup_login_link.click()
         
-    def check_correct_user(self , name):
+    def check_correct_user(self , name : str):
         expect(self.page.get_by_text(f"Logged in as {name}")).to_be_visible()
     
     def delete_acc_click(self):
@@ -77,7 +77,7 @@ class HomePage:
     def check_sub(self):
         expect(self.sub_text).to_be_visible()
 
-    def fill_email_sub(self,email):
+    def fill_email_sub(self,email : str):
         self.email_sub.fill(email)
 
     def click_sub_button(self):
@@ -101,7 +101,7 @@ class HomePage:
     def click_view_cart(self):
         self.view_cart.click()
     
-    def click_women_category(self , n):
+    def click_women_category(self , n : int):
 
         women_text = {0 : "Women - Dress Products" , 1 : "Women - Tops Products" , 2 : "Women - Saree Products"}
         dress_text = self.page.get_by_text(women_text[n])

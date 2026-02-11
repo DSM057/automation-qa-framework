@@ -31,7 +31,7 @@ class ProductPage:
 
         
         
-    def get_item_price(self,number):
+    def get_item_price(self,number : int):
         return self.page.locator('div.productinfo.text-center h2').nth(number).inner_text()
 
 
@@ -66,14 +66,14 @@ class ProductPage:
         expect(self.page.get_by_text(condition)).to_be_visible()
         expect(self.page.locator("div.product-information").get_by_text("Polo")).to_be_visible()
 
-    def fill_search(self,product):
+    def fill_search(self,product : str):
         self.search_input.fill(product)
         self.search_button.click()
 
     def verify_search_text(self):
         expect(self.search_text).to_be_visible()
         
-    def verify_items(self,product):
+    def verify_items(self,product : str):
         self.all_products = self.page.locator("div.col-sm-4").filter(has_text=product)
         count = self.all_products.count()
         if count > 0:
@@ -117,7 +117,7 @@ class ProductPage:
     def check_review_text(self):
         expect(self.review_text).to_be_visible()
 
-    def fill_review_form(self , name , email, review):
+    def fill_review_form(self , name : str, email : str, review : str):
         self.name_review.fill(name)
         self.email_review.fill(email)
         self.text_review.fill(review)
