@@ -1,0 +1,822 @@
+{
+  "info": {
+    "_postman_id": "403d8964-b83a-410d-8e1b-b0c0b2329b05",
+    "name": "Postman_API",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "52348790",
+    "_collection_link": "https://go.postman.co/collection/52348790-403d8964-b83a-410d-8e1b-b0c0b2329b05?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get all products",
+      "event": [
+        {
+          "listen": "prerequest",
+          "script": {
+            "exec": [
+              "pm.globals.set(\"name\", \"Vladyslav\");\r",
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        },
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {",
+              "    pm.response.to.have.status(200);",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{URL}}/productsList",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "productsList"
+          ]
+        },
+        "description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+      },
+      "response": []
+    },
+    {
+      "name": "Post all products",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}/productsList",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "productsList"
+          ]
+        },
+        "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+      },
+      "response": []
+    },
+    {
+      "name": "Get all brands",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{URL}}/brandsList",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "brandsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register new account",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "Vladyslav",
+              "type": "text",
+              "uuid": "c1ceec4e-48d4-44da-b0e2-29ea3a152321"
+            },
+            {
+              "key": "email",
+              "value": "vlafedg@yahoo.com",
+              "type": "text",
+              "uuid": "00b78f3d-75a8-4904-82b2-3cdd3bea8be6"
+            },
+            {
+              "key": "password",
+              "value": "qwert1234\n",
+              "type": "text",
+              "uuid": "b59f6166-4d00-4992-abca-06b454d27d5c"
+            },
+            {
+              "key": "title",
+              "value": "Mr",
+              "type": "text",
+              "uuid": "20e7afc9-64db-4af9-9fd7-c9fb80ca6d61"
+            },
+            {
+              "key": "birth_date",
+              "value": "12",
+              "type": "text",
+              "uuid": "68f448a8-c5c6-4a6e-a5c5-b2d792a46b6b"
+            },
+            {
+              "key": "birth_month",
+              "value": "March",
+              "type": "text",
+              "uuid": "5fe33a2a-255d-471f-981b-8d82431f7f18"
+            },
+            {
+              "key": "birth_year",
+              "value": "2005",
+              "type": "text",
+              "uuid": "c057e787-60a3-41f4-a3b1-dafb5830f307"
+            },
+            {
+              "key": "firstname",
+              "value": "Vladyslav",
+              "type": "text",
+              "uuid": "0960d033-1f80-43ef-9586-bc82b3b9ea1d"
+            },
+            {
+              "key": "lastname",
+              "value": "Chornii",
+              "type": "text",
+              "uuid": "2ee3ccc0-2d71-44c4-a7bb-114856ff84e9"
+            },
+            {
+              "key": "company",
+              "value": "Google",
+              "type": "text",
+              "uuid": "ac5296a9-9ebc-45b8-9291-244e1ff17b03"
+            },
+            {
+              "key": "address1",
+              "value": "NewYork 515",
+              "type": "text",
+              "uuid": "32e711f7-999c-42fd-ab35-75a4d226a6c2"
+            },
+            {
+              "key": "address2",
+              "value": "NewYork 514",
+              "type": "text",
+              "uuid": "158d9d2a-9687-4c34-991d-eff79993140b"
+            },
+            {
+              "key": "country",
+              "value": "United States",
+              "type": "text",
+              "uuid": "0a11a22e-575e-46e4-9bc3-c03296a154e9"
+            },
+            {
+              "key": "zipcode",
+              "value": "64000",
+              "type": "text",
+              "uuid": "3818591d-54ec-4e66-9f60-d39135eafc7d"
+            },
+            {
+              "key": "state",
+              "value": "NewYork",
+              "type": "text",
+              "uuid": "8d78f76e-ce50-4e1b-aa2b-91c10f163c09"
+            },
+            {
+              "key": "city",
+              "value": "NewYork",
+              "type": "text",
+              "uuid": "cd2b9077-8d90-44a5-a27d-5b2b812a778f"
+            },
+            {
+              "key": "mobile_number",
+              "value": "+1234567",
+              "type": "text",
+              "uuid": "644654dc-421a-4b16-a5de-6b6733d8bfb8"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/createAccount",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "createAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Put all Brands",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}/brandsList",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "brandsList"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search product",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "search_product",
+              "value": "top",
+              "type": "text",
+              "uuid": "c1afd84d-5792-48d4-b477-c577989929fd"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/searchProduct",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "searchProduct"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Search product without search parameter",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{URL}}/searchProduct",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "searchProduct"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify login with valid details",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "wladek12345@gmail.com",
+              "type": "text",
+              "uuid": "6e7892af-a0b7-47d2-85f9-1b5f7da22e74"
+            },
+            {
+              "key": "password",
+              "value": "qwerty123",
+              "type": "text",
+              "uuid": "6f27f2c3-ead1-419e-a152-41aa1c948579"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/verifyLogin",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify login without email parameter",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "password",
+              "value": "qwerty123",
+              "type": "text",
+              "uuid": "6d799643-05fd-4fa1-815e-c71f37283bb5"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/verifyLogin",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Verify login with invalid details",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "23143534",
+              "type": "text",
+              "uuid": "60ea5e5c-fd08-471e-94ae-192373d5066d"
+            },
+            {
+              "key": "password",
+              "value": "12343452",
+              "type": "text",
+              "uuid": "0eb66b05-ff68-478b-b550-2808f6a52b8d"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/verifyLogin",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "User update",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "name",
+              "value": "Vladyslav",
+              "type": "text",
+              "uuid": "6176d160-dfa3-4e8e-b422-271c905c9fd0"
+            },
+            {
+              "key": "email",
+              "value": "vlafedg@yahoo.com",
+              "type": "text",
+              "uuid": "20b953aa-398b-43bd-a139-5cb0fe1a2bc5"
+            },
+            {
+              "key": "password",
+              "value": "qwert1234\n",
+              "type": "text",
+              "uuid": "f2f1e19d-0f64-49b6-af8f-166181f8ada0"
+            },
+            {
+              "key": "title",
+              "value": "Mr",
+              "type": "text",
+              "uuid": "2841799a-3970-4a34-97d0-884b7878b3ea"
+            },
+            {
+              "key": "birth_date",
+              "value": "12",
+              "type": "text",
+              "uuid": "090616ee-874f-4cba-8b56-51fff1ec70b1"
+            },
+            {
+              "key": "birth_month",
+              "value": "March",
+              "type": "text",
+              "uuid": "c47d0d6c-baec-4f1c-818f-d009b4545f15"
+            },
+            {
+              "key": "birth_year",
+              "value": "2005",
+              "type": "text",
+              "uuid": "485b667c-de3e-41b5-9cbd-e26fbd638482"
+            },
+            {
+              "key": "firstname",
+              "value": "Vlad",
+              "type": "text",
+              "uuid": "f74a9953-c508-4cf3-8d0a-b14730274829"
+            },
+            {
+              "key": "lastname",
+              "value": "Chornii",
+              "type": "text",
+              "uuid": "979bdb15-d69b-4e69-994f-6a9b15ebe03b"
+            },
+            {
+              "key": "company",
+              "value": "Linux",
+              "type": "text",
+              "uuid": "687b430a-3fb6-4eda-aa57-6eaeb0c9b29d"
+            },
+            {
+              "key": "address1",
+              "value": "NewYork 275",
+              "type": "text",
+              "uuid": "57e812ac-d12e-4e23-aaf9-5a71593fbb3d"
+            },
+            {
+              "key": "address2",
+              "value": "NewYork 754",
+              "type": "text",
+              "uuid": "96fa561c-6068-47d2-b554-778ebe1d27cb"
+            },
+            {
+              "key": "country ",
+              "value": "United States",
+              "type": "text",
+              "uuid": "85a67793-943a-49c1-8fe0-0bcd7b11529d"
+            },
+            {
+              "key": "zipcode",
+              "value": "64000",
+              "type": "text",
+              "uuid": "a9dac5f0-acd3-4c51-bcee-39f4a4a70c11"
+            },
+            {
+              "key": "state",
+              "value": "NewYork",
+              "type": "text",
+              "uuid": "0ee38f9c-e447-4a75-9ff4-46eb624cc623"
+            },
+            {
+              "key": "city",
+              "value": "NewYork",
+              "type": "text",
+              "uuid": "249f5893-fbaa-4102-a547-ea3db4ebe685"
+            },
+            {
+              "key": "mobile_phone",
+              "value": "+12354356",
+              "type": "text",
+              "uuid": "1d599550-e1ba-43eb-952d-3ed76dcd7da4"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/updateAccount",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "updateAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get user account detail by email",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{URL}}/getUserDetailByEmail?email=vlafedg@yahoo.com",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "getUserDetailByEmail"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "vlafedg@yahoo.com"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Deleting user account",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test(\"Status code is 200\", function () {\r",
+              "    pm.response.to.have.status(200);\r",
+              "});"
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "email",
+              "value": "vlafedg@yahoo.com",
+              "type": "text",
+              "uuid": "68ef72cf-748f-4a54-b353-2092d56ae89c"
+            },
+            {
+              "key": "password",
+              "value": "qwert1234\n",
+              "type": "text",
+              "uuid": "18b2b1ed-0c31-4bf2-95c3-a2efbad4015b"
+            }
+          ]
+        },
+        "url": {
+          "raw": "{{URL}}/deleteAccount",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "deleteAccount"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete to verify login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              ""
+            ],
+            "type": "text/javascript",
+            "packages": {},
+            "requests": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{URL}}/verifyLogin",
+          "host": [
+            "{{URL}}"
+          ],
+          "path": [
+            "verifyLogin"
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "URL",
+      "value": "https://automationexercise.com/api"
+    }
+  ]
+}
